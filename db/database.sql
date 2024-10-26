@@ -20,3 +20,11 @@ CREATE TABLE libros(
 
 DESCRIBE autores;
 DESCRIBE libros;
+ 
+INSERT INTO autores (nombre, nacionalidad, fecha_nacimiento) VALUES 
+    ('Gabriel García Márquez', 'Colombiano', '1927-03-06'),
+    ('Jane Austen', 'Británica', '1775-12-16'),
+    ('Jorge Luis Borges', 'Argentino', '1899-08-24'),
+    ('Isabel Allende', 'Chilena', '1942-08-02'),
+    ('Haruki Murakami', 'Japonés', '1949-01-12');
+
