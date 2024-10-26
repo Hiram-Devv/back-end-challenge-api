@@ -6,6 +6,19 @@ export const getAutores = async (req, res) => {
     res.json(rows)
 }
 
+export const getAutor = async (req, res) => {
+    
+    const [rows] = await pool.query('SELECT * FROM autores WHERE id_autor = ?', [req.params.id])
+    console.log(rows);
+
+    if (rows.length <= 0) return res.status(404).json({
+        message: 'Autor no encontrado'
+    })
+    
+    res.json(rows[0]);
+}
+
+
 export const createAutores = async(req, res) => {
     const {nombre, nacionalidad, fecha_nacimiento} = req.body
 
