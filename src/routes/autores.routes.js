@@ -12,7 +12,7 @@ router.post('/autores', createAutores)
 
 router.put('/autores', updateAutores)
 
-router.delete('/autores', deleteAutores);
+router.delete('/autores/:id', deleteAutores);
 
 
 export default router

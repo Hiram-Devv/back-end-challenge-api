@@ -14,7 +14,7 @@ export const getAutor = async (req, res) => {
     if (rows.length <= 0) return res.status(404).json({
         message: 'Autor no encontrado'
     })
-    
+
     res.json(rows[0]);
 }
 
@@ -31,6 +31,15 @@ export const createAutores = async(req, res) => {
     })
 }
 
-export const updateAutores = (req, res) => res.send('actualizando autores');
+export const deleteAutores = async (req, res) => {
+    const [result] = await pool.query('DELETE FROM autores WHERE id_autor = ?', [req.params.id]);
+    
+    if(result.affectedRows <= 0) return res.status(404).json({
+        message: 'Autor no encontrado'
+    })
+    
+    res.sendStatus(204);
+}
 
-export const deleteAutores = (req, res) => res.send('eliminando autores');
+
+export const updateAutores = (req, res) => res.send('actualizando autores');
