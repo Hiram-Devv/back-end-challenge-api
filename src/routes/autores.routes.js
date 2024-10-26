@@ -1,15 +1,16 @@
 import {Router} from 'express'
+import {getAutores, createAutores, updateAutores, deleteAutores} from '../controllers/autores.controller.js'
 
 
 const router = Router()
 
-router.get('/autores', (req, res) => res.send('obteniendo autores'));
+router.get('/autores', getAutores);
 
-router.post('/autores', (req, res) => res.send('creando autores'));
+router.post('/autores', createAutores)
 
-router.put('/autores', (req, res) => res.send('actualizando autores'));
+router.put('/autores', updateAutores)
 
-router.delete('/autores', (req, res) => res.send('eliminando autores'));
+router.delete('/autores', deleteAutores);
 
 
 export default router
