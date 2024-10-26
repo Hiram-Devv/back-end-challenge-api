@@ -10,7 +10,7 @@ router.get('/autores/:id', getAutor);
 
 router.post('/autores', createAutores)
 
-router.put('/autores', updateAutores)
+router.patch('/autores/:id', updateAutores)
 
 router.delete('/autores/:id', deleteAutores);
 

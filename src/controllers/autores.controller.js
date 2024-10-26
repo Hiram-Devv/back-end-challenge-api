@@ -42,4 +42,22 @@ export const deleteAutores = async (req, res) => {
 }
 
 
-export const updateAutores = (req, res) => res.send('actualizando autores');
+export const updateAutores = async (req, res) => {
+    const { id } = req.params
+    const { nombre, nacionalidad, fecha_nacimiento, id_autor } = req.body
+    
+    const [result] = await pool.query('UPDATE autores SET nombre = IFNULL(?, nombre), nacionalidad = IFNULL(?, nacionalidad), fecha_nacimiento =IFNULL(?, fecha_nacimiento) WHERE id_autor = ?', 
+                    [nombre, nacionalidad, fecha_nacimiento, id])
+
+
+
+    if(result.affectedRows === 0) return res.status(404).json({
+        message: "Autor no encontrado"
+    })
+
+    const [rows] = await pool.query('SELECT * FROM autores WHERE id_autor = ?',[id])
+
+
+    console.log(result)
+    res.json(rows)
+}
