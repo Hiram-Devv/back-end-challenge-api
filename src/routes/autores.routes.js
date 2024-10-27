@@ -1,7 +1,6 @@
 import {Router} from 'express'
 import {getAutores, createAutores, updateAutores, deleteAutores, getAutor} from '../controllers/autores.controller.js'
 
-
 const router = Router()
 
 router.get('/autores', getAutores);
@@ -13,6 +12,8 @@ router.post('/autores', createAutores)
 router.patch('/autores/:id', updateAutores)
 
 router.delete('/autores/:id', deleteAutores);
+
+
 
 
 export default router
