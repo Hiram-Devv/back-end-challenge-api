@@ -28,3 +28,11 @@ INSERT INTO autores (nombre, nacionalidad, fecha_nacimiento) VALUES
     ('Isabel Allende', 'Chilena', '1942-08-02'),
     ('Haruki Murakami', 'Japonés', '1949-01-12');
 
+
+INSERT INTO Libros (titulo, fecha_publicacion, genero, id_autor) VALUES 
+    ('Cien años de soledad', '1967-05-30', 'Realismo Mágico', 5),
+    ('Orgullo y prejuicio', '1813-01-28', 'Novela', 6),
+    ('Ficciones', '1944-01-01', 'Cuento', 10),
+    ('La casa de los espíritus', '1982-01-01', 'Novela', 10),
+    ('Kafka en la orilla', '2002-09-12', 'Ficción', 10);
+
