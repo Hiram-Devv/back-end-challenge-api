@@ -9,7 +9,7 @@ router.get('/libros/:id', getLibro)
 
 router.post('/libros', createLibros)
 
-router.put('/libros', updateLibros)
+router.patch('/libros/:id', updateLibros)
 
 router.delete('/libros/:id', deleteLibros)
 
