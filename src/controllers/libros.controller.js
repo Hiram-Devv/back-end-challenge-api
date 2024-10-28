@@ -28,6 +28,15 @@ export const createLibros = async(req, res) => {
     })
 }
 
+export const deleteLibros = async(req, res) => {
+    const [result] = await pool.query('DELETE FROM libros WHERE id_libro = ?', [req.params.id])
+    
+    if(result.affectedRows <=0) return res.status(404).json({
+        message: "Libro no encontrado"
+    }) 
+    res.sendStatus(204);
+}
+
 export const updateLibros = (req, res) => res.send('Actualizando libros')
 
-export const deleteLibros = (req, res) => res.send('Eliminando libros')
+

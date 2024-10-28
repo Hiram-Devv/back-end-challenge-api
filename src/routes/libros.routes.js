@@ -11,7 +11,7 @@ router.post('/libros', createLibros)
 
 router.put('/libros', updateLibros)
 
-router.delete('/libros', deleteLibros)
+router.delete('/libros/:id', deleteLibros)
 
 
 export default router
