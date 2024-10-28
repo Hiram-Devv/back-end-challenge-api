@@ -1,9 +1,11 @@
 import { Router } from 'express'
-import {getLibros, createLibros, updateLibros, deleteLibros} from '../controllers/libros.controller.js'
+import {getLibros, createLibros, updateLibros, deleteLibros, getLibro} from '../controllers/libros.controller.js'
 
 const router = Router()
 
 router.get('/libros', getLibros)
+
+router.get('/libros/:id', getLibro)
 
 router.post('/libros', createLibros)
 

@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.use(indexRoutes)
 app.use('/api', autoresRoutes)
-app.use(librosRoutes)
+app.use('/api', librosRoutes)
 
 
 
